@@ -1,0 +1,11 @@
+dependencies:
+ - name: mysql
+   version: 0.1.0
+   repository: https://kubernetes-charts.storage.googleapis.com
+   condition: mysql.enabled
+ - name: redis
+   version: 0.4.2
+   repository: https://kubernetes-charts.storage.googleapis.com
+   condition: redis.enabled
+   tags:
+   - redistag
