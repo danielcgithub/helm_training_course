@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: {{ .Release.Name }}
+data:
+   myvalue: "Hello World"
+   courseTopic: {{ quote .Values.course.Topic }}
+   courseLocation: {{ quote .Values.course.Location }}
+   availableLocations: |-
+   {{- range $index, $location := .Values.courses.Locations }}
+   - {{ $index }} : {{ $location }}
+   {{- end }}
