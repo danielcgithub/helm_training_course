@@ -7,6 +7,6 @@ data:
    courseTopic: {{ quote .Values.course.Topic }}
    courseLocation: {{ quote .Values.course.Location }}
    availableLocations: |-
-   {{- range $index, $location := .Values.courses.Locations }}
-   - {{ $index }} : {{ $location }}
-   {{- end }}
+      {{- range $index, $location := .Values.courses.Locations }}
+      - {{ $index }} : {{ $location }}
+      {{- end }}
